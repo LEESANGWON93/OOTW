@@ -12,7 +12,7 @@ db = client.dbsparta                      # 'dbsparta'라는 이름의 db를 만
 ## HTML을 주는 부분
 @app.route('/')
 def home():
-    return render_template('ootw.html')
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000,debug=True)
