@@ -57,8 +57,8 @@ h6 {
 header.masthead {
   position: relative;
   overflow: hidden;
-  padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
+  padding-top: 100px;
+  padding-bottom: 100px;
   /*background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
   background-repeat: no-repeat;
   background-position: center center;
@@ -157,4 +157,14 @@ header.masthead .bg-circle-4 {
 
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+
+#banner {
+  text-align: center;
+  line-height: 35px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  color: white;
+  background-color: steelblue;
+  height: 35px;
 }

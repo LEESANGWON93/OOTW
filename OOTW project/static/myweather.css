@@ -1,7 +1,6 @@
 .myweather {
     background-image: url('sunnyday.png');
     background-size: cover;
-    border-radius: 15px;
     width: auto;
     height: auto;
     color: white;
@@ -12,3 +11,15 @@
     align-items: center;
     justify-content: center;
 }
+
+
+#banner {
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 11px;
+    color: white;
+    background-color: black;
+    height: 35px;
+    }
+  

@@ -49,16 +49,15 @@
           if (response['result'] == 'success') {
             let weather = response['data'];
             for (let i = 0; i < weather.length; i++) {
-              
               let icon;
               let address = weather[i]['address'];
               let currenttemp = weather[i]['currenttemp'];
               let cast = weather[i]['cast'];
-              if( cast.split(',')[0] == '흐림' ){
+              if (cast.split(',')[0] == '흐림') {
                 icon = '/static/cloud.png';
-              }else if( cast.split(',')[0] == '맑음' ){
+              } else if (cast.split(',')[0] == '맑음') {
                 icon = '/static/sun.png'
-              }else if( cast.split(',')[0] == '비' ){
+              } else if (cast.split(',')[0] == '비') {
                 icon = '/static/rain.png'
               }
               let min = weather[i]['min'];
@@ -126,15 +125,9 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-5 bg-black">
-    <div class="container">
-      <p class="m-0 text-center text-white small">Copyright &copy; Crème de menthe</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
+  <div id="banner">
+    <p>Copyright &copy; Cremedementhe</p>
+  </div>
 
 </body>
 
