@@ -50,18 +50,27 @@
             let weather = response['data'];
             for (let i = 0; i < weather.length; i++) {
               let icon;
+              let background;
+              let mystyle;
               let address = weather[i]['address'];
               let currenttemp = weather[i]['currenttemp'];
               let cast = weather[i]['cast'];
               if (cast.split(',')[0] == '흐림') {
                 icon = '/static/cloud.png';
+                background = '/static/cloudyday.png';
+                mystyle = '/static/cloudcloth.png';
               } else if (cast.split(',')[0] == '맑음') {
                 icon = '/static/sun.png';
+                background = '/static/sunnyday.png';
+                mystyle = '/static/suncloth.png';
               } else if (cast.split(',')[0] == '비') {
                 icon = '/static/rain.png';
+                background = '/static/rainyday.png';
+                mystyle = '/static/raincloth.png';
               }
               let min = weather[i]['min'];
               let max = weather[i]['max'];
+              $('#weather-state').empty()
               $('#weather-state').append(`
               <div class="container">
         <img style="width: 150px; height: 150px;" src="${icon}" alt=""/>
@@ -71,6 +80,12 @@
         <h2 class="masthead-subheading mb-0">${cast}</h2>
       </div>
               `)
+              $('#megazine').empty()
+              $('#megazine').append(`
+              <img class="img-fluid" style="padding-top: 20px;" src="${mystyle}" alt=""/>
+                        `)
+
+              $(".myweather").css({ "background": `url("${background}")` });
             }
           }
         }
@@ -120,8 +135,8 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
-          <div class="p-5">
-            <img class="img-fluid" src="{{ url_for('static', filename='sample.png') }}" alt="">
+          <div id="megazine">
+            <img class="img-fluid" src="{{ url_for('static', filename='suncloth.png') }}" alt=""/>
           </div>
         </div>
       </div>

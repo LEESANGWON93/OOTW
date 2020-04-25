@@ -1,5 +1,4 @@
 .myweather {
-    background-image: url('sunnyday.png');
     background-size: cover;
     width: auto;
     height: auto;
@@ -13,13 +12,25 @@
 }
 
 
+.sunny_header {
+
+}
+
+.cloudy_header {
+
+}
+
+.rainy_header {
+    
+}
+
 #banner {
     text-align: center;
     line-height: 35px;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 11px;
     color: white;
-    background-color: black;
+    background-color: #212529;
     height: 35px;
     }
   
