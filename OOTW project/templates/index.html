@@ -12,7 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='one-page-wonder.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='one-page-wonder.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='myweather.css') }}">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -49,13 +49,23 @@
           if (response['result'] == 'success') {
             let weather = response['data'];
             for (let i = 0; i < weather.length; i++) {
+              
+              let icon;
               let address = weather[i]['address'];
               let currenttemp = weather[i]['currenttemp'];
               let cast = weather[i]['cast'];
+              if( cast.split(',')[0] == '흐림' ){
+                icon = '/static/cloud.png';
+              }else if( cast.split(',')[0] == '맑음' ){
+                icon = '/static/sun.png'
+              }else if( cast.split(',')[0] == '비' ){
+                icon = '/static/rain.png'
+              }
               let min = weather[i]['min'];
               let max = weather[i]['max'];
               $('#weather-state').append(`
               <div class="container">
+        <img style="width: 150px; height: 150px;" src="${icon}" alt=""/>
         <h2 class="masthead-subheading mb-0">${address}</h2>
         <h1 class="masthead-heading mb-0">${currenttemp}℃</h1>
         <h2 class="masthead-subheading mb-0">${min}/${max}</h2>
@@ -87,15 +97,15 @@
           <li class="nav-item">
             <a class="nav-link" href="https://cremedementhe.shop/">view more style!</a>
           </li>
-          </ul>
+        </ul>
       </div>
     </div>
   </nav>
 
-  <header class="masthead text-center text-white">
+  <header class="masthead text-center text-white myweather">
     <div class="masthead-content" id="weather-state">
       <div class="container">
-        <img src="{{ url_for('static', filename='sunnyday.png') }}" alt="">
+        <img style="width: 150px; height: 150px;" src="{{ url_for('static', filename='sun.png') }}" alt="" />
         <h2 class="masthead-subheading mb-0">위치</h2>
         <h1 class="masthead-heading mb-0">현재기온℃</h1>
         <h2 class="masthead-subheading mb-0">최저기온/최대기온</h2>
@@ -109,13 +119,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="{{ url_for('static', filename='04.jpg') }}" alt="">
-          </div>
-        </div>
-        <div class="col-lg-6 order-lg-1">
-          <div class="p-5">
-            <h2 class="display-4">가벼운 자켓!</h2>
-            <p>거리에 꽃이 피고 따사로운 햇살이 내리쬐는 지금, 매일 유니폼처럼 입던 무채색에서 벗어나 봄처럼 생동감 넘치는 색감으로 스타일을 완성해보는건 어때요? </p>
+            <img class="img-fluid" src="{{ url_for('static', filename='sample.png') }}" alt="">
           </div>
         </div>
       </div>
