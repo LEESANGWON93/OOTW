@@ -50,20 +50,24 @@
             let weather = response['data'];
             for (let i = 0; i < weather.length; i++) {
               let icon;
+              let content;
               let address = weather[i]['address'];
               let currenttemp = weather[i]['currenttemp'];
               let cast = weather[i]['cast'];
               if (cast.split(',')[0] == '흐림') {
                 icon = '/static/cloud.png';
+                content = '/static/smaple';
               } else if (cast.split(',')[0] == '맑음') {
                 icon = '/static/sun.png'
+                content = '/static/smaple';
               } else if (cast.split(',')[0] == '비') {
                 icon = '/static/rain.png'
+                content = '/static/smaple';
               }
               let min = weather[i]['min'];
               let max = weather[i]['max'];
               $('#weather-state').append(`
-              <div class="container">
+              <div class="container myweather">
         <img style="width: 150px; height: 150px;" src="${icon}" alt=""/>
         <h2 class="masthead-subheading mb-0">${address}</h2>
         <h1 class="masthead-heading mb-0">${currenttemp}℃</h1>

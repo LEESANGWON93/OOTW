@@ -72,11 +72,11 @@ header.masthead .masthead-content {
 }
 
 header.masthead .masthead-content .masthead-heading {
-  font-size: 4rem;
+  font-size: 36px;
 }
 
 header.masthead .masthead-content .masthead-subheading {
-  font-size: 2rem;
+  font-size: 24px;
 }
 
 header.masthead .bg-circle {
@@ -157,14 +157,4 @@ header.masthead .bg-circle-4 {
 
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
-}
-
-#banner {
-  text-align: center;
-  line-height: 35px;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 11px;
-  color: white;
-  background-color: steelblue;
-  height: 35px;
 }
